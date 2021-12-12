@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background-gradient: linear-gradient(90deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+
+  /* light theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --drak-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+  /* dark theme */
+  --very-dark-blue: #161722;
+  --very-dark-desaturated-blue: #25273c;
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+  --font-family: 'Josefin Sans', sans-serif;
+  --font-size: 1.125rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 5% 15%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body {
+  min-width: 50%;
+  width: 100%;
+  padding-inline: 20%;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.body__head {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.body__head_logo {
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 700;
   color: white;
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.body__head_switch:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.body__add_todo {
+  display: flex;
+  width: 100%;
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 0.2rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.body__add_todo_form {
+  color: inherit;
+  flex: auto;
+}
+
+.body__add_todo__input {
+  color: inherit;
+  border: none;
+  outline: none;
+  flex: auto;
+  background: inherit;
+  width: 100%;
+}
+
+::placeholder {
+  text-align: start;
+  vertical-align: middle;
+  background: inherit;
+}
+
+.body__todos_divider {
+  /* border-color: var(--very-dark-desaturated-blue);
+  border-width: 1px; */
+  border: 0.01px solid var(--light-grayish-blue);
+  border-bottom: none;
+  padding: none;
+  margin-inline: 1%;
+}
+
+.body__todos {
+  box-shadow: 0 1px 1px 1px var(--very-light-grayish);
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.body__actions {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 1.2rem;
+  color: var(--drak-grayish-blue);
+  font-size: 0.6rem;
+}
+
+.body__actions_filter {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.body__actions_button_clear,
+.body_actions_items-left,
+.body__actions_filter button {
+  color: var(--drak-grayish-blue);
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  background: none;
+  font-weight: 700;
+}
+
+button.button-active {
+  color: var(--bright-blue);
+}
+
+.body_actions_items-left,
+.body__actions_button_clear {
+  font-weight: normal;
+}
+
+.body__actions_button_clear:hover,
+.body__actions_filter button:hover {
+  cursor: pointer;
+  /* color: var(--light-grayish-blue-hover); */
+}
+
+.body_actions_items-left {
+  font-size: 0.9rem;
+}
+
+
+@media screen and (max-width: 56rem) {
+  .home {
+    background-repeat: no-repeat;
+    padding: 10% 7%;
   }
-  to {
-    transform: rotate(360deg);
+
+  div.body__head {
+    align-items: flex-start;
+  }
+
+  .body__actions_filter {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -20%;
+    padding: 1.2rem 20%;
+    background: inherit;
+    box-shadow: 0px 10px 12px 3px #0000008c;
+  }
+
+  .body {
+    width: 100%;
+    padding-inline: unset;
   }
 }

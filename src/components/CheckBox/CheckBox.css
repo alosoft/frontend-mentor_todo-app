@@ -1,0 +1,15 @@
+.body__add_todo__checkbox {
+    width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    background: var(--check-background-gradient);
+    border-radius: 100%;
+    border: 1px solid var(--light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__add_todo__checkbox:hover {
+    cursor: pointer;
+}

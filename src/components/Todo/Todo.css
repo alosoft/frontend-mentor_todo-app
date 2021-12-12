@@ -1,0 +1,40 @@
+.body__todos_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    gap: 1rem;
+    border-radius: 0.1rem;
+    background: white;
+}
+
+.body__todos_item:hover {
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+}
+
+.body__todos_item_main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* .body__todos_item_delete {
+    display: none;
+}
+
+.body__todos_item_delete:hover {
+    display: block;
+} */
+
+@media screen and (max-width: 56rem) {
+    * {
+        font-size: 1rem;
+    }
+
+}
