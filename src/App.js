@@ -13,7 +13,7 @@ import DarkDesktop from './images/bg-desktop-dark.jpg';
 
 function App() {
   const [theme, setTheme, currentTheme, todos, setTodos] = useContext(ThemeContext);
-  console.log('building App')
+  // console.log('building App')
   const isMobile = useMediaQuery('(max-width: 56rem)');
   const isLight = theme === 'light';
   const style = currentTheme();

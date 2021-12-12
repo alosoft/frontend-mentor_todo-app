@@ -5,7 +5,7 @@ import './Todo.css';
 import IconCross from '../../images/icon-cross.svg';
 
 const Todo = ({ todo, reload }) => {
-    console.log('mark todo')
+    // console.log('mark todo')
     const [theme, seTheme, currentTheme, todos, setTodos] = useContext(ThemeContext);
     const style = currentTheme();
     const [refresh, setRefresh] = useState(true);
@@ -14,8 +14,8 @@ const Todo = ({ todo, reload }) => {
         setRefresh(!refresh);
         setTodos(prevTodo => {
             let currentTodo = prevTodo.filter(item => item.task === todo.task);
-            console.log(currentTodo)
-            console.log(prevTodo)
+            // console.log(currentTodo)
+            // console.log(prevTodo)
             if (currentTodo.length > 0) {
                 currentTodo[0].completed = checked
             }
@@ -31,11 +31,11 @@ const Todo = ({ todo, reload }) => {
                     copied.push(prevTodo[i])
                 }
             }
-            console.log(copied)
+            // console.log(copied)
             return copied;
         })
     }
-    console.log(`todo: ${todo.task} and is ${todo.completed}`)
+    // console.log(`todo: ${todo.task} and is ${todo.completed}`)
     return (
         <div onMouseEnter={() => setShowDelete(true)}
             onMouseLeave={() => setShowDelete(false)}
